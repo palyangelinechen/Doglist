@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href = "/css/styles.css" type = "text/css" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Doglist</title>
+  </head>
+  <body>
+    <form action = "/dogs/new">
+      <input class = "button btn btn-primary" type = "submit" value = "Create" />
+    </form>
+    <br>
+    <div class = "container">
+      {{#each dogs as |dog|}}
+        {{> cards dog}}
+      {{/each}}
+    </div>
+  </body>
+</html>

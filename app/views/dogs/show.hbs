@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href = "/css/styles.css" type = "text/css" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Show Dog</title>
+  </head>
+  <body>
+    <div id = "dog" class = "card text-center bg-light mb-3 border-light mb-3">
+      <form action = "/dogs">
+        <input class = "button btn btn-primary" type = "submit" value = "Home" />
+      </form>
+      <img class = "card-img-top" src = "{{image}}" />
+      <div class = "card-body">
+        <h1 class = "card-title">Name: {{name}}</h1>
+        <h1 class = "card-subtitle mb-2 text-muted">Age: {{age}}</h1>
+        <p class = "card-text">{{description}}</p>
+      </div>
+      <form action = "/dogs/{{id}}?_method=DELETE" method = "post">
+        <input class = "button btn btn-primary" type = "submit" value = "Delete" />
+      </form>
+      <form action = "/dogs/{{id}}/edit">
+        <input class = "button btn btn-primary" type = "submit" value = "Update" />
+      </form>
+    </div>
+  </body>
+</html>

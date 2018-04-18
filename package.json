@@ -1,0 +1,36 @@
+{
+  "name": "doglist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "9.7.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "lodash": "^4.17.5",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.15",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palyangelinechen/Doglist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/palyangelinechen/Doglist/issues"
+  },
+  "homepage": "https://github.com/palyangelinechen/Doglist#readme",
+  "description": ""
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href = "/css/styles.css" type = "text/css" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Edit Dog</title>
+  </head>
+  <body>
+    <h1>Update Dog</h1>
+    <form action = "/dogs/{{id}}?_method=PUT" method = "post">
+      <div class = "form-group">
+        <label for = "dogImage">Image</label>
+        <br>
+        <input class = "form-control" id = "dogImage" type = "text" name = "image" value = "{{image}}">
+        <br>
+        <label for = "dogName">Name</label>
+        <br>
+        <input class = "form-control" id = "dogName" type = "text" name = "name" value = "{{name}}">
+        <br>
+        <label for = "dogAge">Age</label>
+        <br>
+        <input class = "form-control" id = "dogAge" type = "text" name = "age" value = "{{age}}">
+        <br>
+        <label for = "dogDescription">Description</label>
+        <br>
+        <textarea class = "form-control" id = "dogDescription" name = "description" cols = "50" rows = "10">{{description}}</textarea>
+        <br>
+        <input class = "btn btn-primary" type = "submit" value = "Update Dog">
+      </div>
+    </form>
+  </body>
+</html>
