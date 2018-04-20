@@ -13,6 +13,12 @@ const dogSchema = mongoose.Schema({
     type: Number,
     required: true
   },
+  personalityType: {
+    type: String
+  },
+  dogBreed: {
+    type: String
+  },
   description: {
     type: String
   }

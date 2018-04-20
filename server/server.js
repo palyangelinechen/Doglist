@@ -49,6 +49,8 @@ app.post("/dogs", (req, res) => {
     image: req.body.image,
     name: req.body.name,
     age: req.body.age,
+    personalityType: req.body.personalityType,
+    dogBreed: req.body.dogBreed,
     description: req.body.description
   })
   dog.save()
@@ -67,6 +69,8 @@ app.get("/dogs/:id", (req, res) => {
       image: dog[0].image,
       name: dog[0].name,
       age: dog[0].age,
+      personalityType: dog[0].personalityType,
+      dogBreed: dog[0].dogBreed,
       description: dog[0].description
     });
   })
@@ -82,6 +86,8 @@ app.get("/dogs/:id/edit", (req, res) => {
       image: dog[0].image,
       name: dog[0].name,
       age: dog[0].age,
+      personalityType: dog[0].personalityType,
+      dogBreed: dog[0].dogBreed,
       description: dog[0].description
     });
   })
@@ -91,7 +97,7 @@ app.get("/dogs/:id/edit", (req, res) => {
 })
 app.put("/dogs/:id", (req, res) => {
   const id = req.params.id;
-  const body = _.pick(req.body, ["image", "name", "age", "description"]);
+  const body = _.pick(req.body, ["image", "name", "age", "personalityType", "dogBreed", "description"]);
   Dog.findByIdAndUpdate(id, {$set: body}, {new: true})
   .then(dog => {
     res.redirect("/dogs");
