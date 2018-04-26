@@ -6,6 +6,8 @@ const path = require("path");
 const _ = require("lodash");
 const methodOverride = require("method-override");
 const {Dog} = require("./models/dog.js");
+const multer = require("multer");
+const upload = multer({dest: "./public/images"});
 const app = express();
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "../app/views/dogs"));
@@ -41,12 +43,12 @@ app.get("/dogs", (req, res) => {
 app.get("/dogs/new", (req, res) => {
   res.render("new.hbs");
 })
-app.post("/dogs", (req, res) => {
+app.post("/dogs", upload.single("image"), (req, res) => {
   if (!req.body.name || !req.body.age) {
     return res.status(400).send({error: "Did not include name and age"});
   }
   const dog = new Dog({
-    image: req.body.image,
+    image: req.file.filename,
     name: req.body.name,
     age: req.body.age,
     personalityType: req.body.personalityType,
@@ -95,10 +97,11 @@ app.get("/dogs/:id/edit", (req, res) => {
     res.status(404).send();
   })
 })
-app.put("/dogs/:id", (req, res) => {
+app.put("/dogs/:id", upload.single("image"), (req, res) => {
   const id = req.params.id;
-  const body = _.pick(req.body, ["image", "name", "age", "personalityType", "dogBreed", "description"]);
-  Dog.findByIdAndUpdate(id, {$set: body}, {new: true})
+  const image = req.file.filename;
+  const body = _.pick(req.body, ["name", "age", "personalityType", "dogBreed", "description"]);
+  Dog.findByIdAndUpdate(id, {$set: {image, body}}, {new: true})
   .then(dog => {
     res.redirect("/dogs");
   })

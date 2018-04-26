@@ -9,11 +9,11 @@
   </head>
   <body>
     <h1>Create New Dog</h1>
-    <form action = "/dogs" method = "post">
+    <form action = "/dogs" method = "post" enctype = "multipart/form-data">
       <div class = "form-group">
         <label for = "dogImage">Image</label>
         <br>
-        <input class = "form-control" id = "dogImage" type = "text" name = "image" value = "https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/129/dog-face_1f436.png">
+        <input class = "form-control" id = "dogImage" type = "file" name = "image">
         <br>
         <label for = "dogName">Name</label>
         <br>

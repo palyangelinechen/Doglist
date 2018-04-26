@@ -9,11 +9,11 @@
   </head>
   <body>
     <h1>Update Dog</h1>
-    <form action = "/dogs/{{id}}?_method=PUT" method = "post">
+    <form action = "/dogs/{{id}}?_method=PUT" method = "post" enctype = "multipart/form-data">
       <div class = "form-group">
         <label for = "dogImage">Image</label>
         <br>
-        <input class = "form-control" id = "dogImage" type = "text" name = "image" value = "{{image}}">
+        <input class = "form-control" id = "dogImage" type = "file" name = "image" value = "{{image}}">
         <br>
         <label for = "dogName">Name</label>
         <br>
